@@ -1,7 +1,9 @@
 package presentation_layer;
 
-import business_layer.*;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
+
+import business_layer.BLcustomer;
 
 class UI {
 
@@ -42,6 +44,21 @@ class UI {
 
     public void update_customer() {
         //TODO: Homework
+        System.out.println("Enter id: ");
+        cus.setCusId(in.next());
+
+        System.out.println("Enter new last name: ");
+        cus.setLName(in.next());
+
+        System.out.println("Enter new first name: ");
+        cus.setFName(in.next());
+
+        try {
+            cus.update();
+            System.out.println("Update successful");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete_customer() {
@@ -59,7 +76,11 @@ class UI {
     public void view_all_customers() {
         //TODO: inLab (HINT: use List, exmaine the BLcustomer class for the method to call)
         try {
-            List<BLcustomer> customers = cus.getAll();
+            List<BLcustomer> customers = new BLcustomer().getAll();
+            if (customers.isEmpty()) {
+                System.out.println("No customers found");
+            }
+
             for (BLcustomer customer : customers) {
                 System.out.println(customer);
             }

@@ -60,4 +60,18 @@ public class DAcustomer {
 
         return customers;
     }
+
+    public void update(BLcustomer cus) throws Exception {
+        String sql = "";
+        try {
+            db.connect();
+            Statement s = db.getConnect().createStatement();
+            sql = "UPDATE customer SET lname='" + cus.getLName() + "', fname='" + cus.getFName() + "' WHERE id=" + cus.getCusId();
+            s.execute(sql);
+            db.disconnect();
+        } catch (Exception e) {
+            System.err.println("Error: " + e);
+            throw e;
+        }
+    }
 }
