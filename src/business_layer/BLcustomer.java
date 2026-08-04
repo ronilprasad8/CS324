@@ -54,4 +54,8 @@ public class BLcustomer{
         return cusData.getAll();
     }
 
+    @Override
+    public String toString() {
+        return "ID: " + cusId + "\t First Name: " + fName + "\t Last Name: " + lName;
+    }
 }

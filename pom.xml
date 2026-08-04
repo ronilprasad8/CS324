@@ -37,9 +37,10 @@
     <dependencies>
         <!-- UCanAccess: connects Java to .accdb files -->
         <dependency>
-            <groupId>net.sf.ucanaccess</groupId>
+            <groupId>io.github.spannm</groupId>
             <artifactId>ucanaccess</artifactId>
-            <version>5.0.1</version>
+            <version>5.1.6</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
