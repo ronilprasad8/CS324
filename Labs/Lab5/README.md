@@ -223,8 +223,8 @@ java -cp Customer/build/classes customer.Customer
 
 #### Step 1: Compile both projects
 ```powershell
-javac -d Bank/build/classes (Get-ChildItem -Path Bank/src -Filter *.java -Recurse | ForEach-Object { $_.FullName })
-javac -d Customer/build/classes (Get-ChildItem -Path Customer/src -Filter *.java -Recurse | ForEach-Object { $_.FullName })
+javac -d Bank/build/classes Bank/src/api/*.java Bank/src/bank/*.java
+javac -d Customer/build/classes Customer/src/api/*.java Customer/src/customer/*.java
 ```
 
 #### Step 2: Start the Bank Server (Terminal 1)
